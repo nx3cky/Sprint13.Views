@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "ShoppingCart";
+    var markets = ViewBag.Markets as List<string>;
+    var products = ViewBag.Products as List<string>;
+    var dates = new List<DateTime> { DateTime.Today, DateTime.Today.AddDays(1), DateTime.Today.AddDays(2) };
+}
+
+<h1>Your shopping cart</h1>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+else
+{
+    <form asp-action="ShoppingCart" method="post">
+        <p>Input your fullname:</p>
+        <p>@Html.TextBox("fullName")</p>
+
+        <p>Input your address :</p>
+        <p>@Html.TextBox("address")</p>
+
+        <p>@Html.DropDownList("market", new SelectList(markets))</p>
+
+        <p>
+            @foreach (var date in dates)
+            {
+                @Html.RadioButton("shipDate", date.ToString()) @date.ToString("M/d/yyyy h:mm:ss tt") <br />
+            }
+        </p>
+
+        <p>@Html.ListBox("selectedProducts", new MultiSelectList(products))</p>
+
+        <p><input type="submit" value="Send" /></p>
+    </form>
+}
