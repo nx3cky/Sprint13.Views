@@ -28,5 +28,9 @@ namespace vs.Controllers
             ViewBag.SuperMarkets = markets;
             return View();
         }
+        public IActionResult ProductInfo()
+        {
+            return View();
+        }
     }
 }
