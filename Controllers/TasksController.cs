@@ -9,5 +9,9 @@ namespace vs.Controllers
         {
             return View();
         }
+        public IActionResult Greetings()
+        {
+            return View();
+        }
     }
 }
