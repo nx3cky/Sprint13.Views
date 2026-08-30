@@ -32,5 +32,18 @@ namespace vs.Controllers
         {
             return View();
         }
+        public IActionResult ShoppingList()
+        {
+            Dictionary<string, int> shoppingList = new Dictionary<string, int>
+            {
+                 { "Milk", 2 },
+                 { "Bread", 2 },
+                 { "Cake", 1 },
+                 { "Ice Cream", 5 },
+                 { "Cola", 10 }
+            };
+
+            return View(shoppingList);
+        }
     }
 }
