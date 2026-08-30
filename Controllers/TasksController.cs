@@ -13,5 +13,20 @@ namespace vs.Controllers
         {
             return View();
         }
+
+        public IActionResult SuperMarkets()
+        {
+            List<string> markets = new List<string>
+            {
+                "WellMart",
+                "Silpo",
+                "ATB",
+                "Furshet",
+                "Metro"
+            };
+
+            ViewBag.SuperMarkets = markets;
+            return View();
+        }
     }
 }

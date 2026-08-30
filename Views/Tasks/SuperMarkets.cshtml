@@ -1,0 +1,19 @@
+﻿@{
+	ViewData["Title"] = "SuperMarkets - ViewTasl";
+
+	var markets = ViewBag.SuperMarkets as List<string>;
+}
+
+<h1>Our Supermarkets</h1>
+
+@if (markets != null)
+{
+    <h2>There are @markets.Count markets:</h2>
+
+    <div style="margin-top: 20px;">
+        @foreach (var market in markets)
+        {
+            <p>@market</p>
+        }
+    </div>
+}
