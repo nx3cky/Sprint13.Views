@@ -1,0 +1,7 @@
+﻿@using vs.Services
+@inject ITimeService TimeService
+
+<div>
+    <h2>It's time to shopping!</h2>
+    <p>@TimeService.GetTimeForTomorrow()</p>
+</div>
